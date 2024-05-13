@@ -1,0 +1,213 @@
+.CampoCards{
+    background-color: transparent;
+}
+.CampoCards .card{
+    border: none;
+    border-radius: 0 25px 0 0;
+    max-width: 18rem !important;
+    box-shadow: 0px 3px 5px rgba(177, 177, 177, 0.119), 0px -3px 5px rgba(177, 177, 177, 0.119);
+    transition: transform 1s ease;
+   
+}
+.CampoCards .card .card-img-top{
+    height: 200px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    
+
+}
+
+.CampoCards .card:hover .card-img-top {
+    border: 1px solid rgb(56, 94, 234);
+}
+.btnExcluirPrd{
+    display: none;
+}
+.btnExcluirPrd button{
+    position: absolute;
+    top: 0;
+    background-color: brown;
+    color: aliceblue;
+    border: none;
+    display: none;
+
+}
+.btnExcluirPrd button:focus {
+    outline: none;
+  }
+  .CampoCards .card:hover .btnExcluirPrd button{
+    display: flex;
+}
+.CampoCards .card:hover .btnExcluirPrd{
+    display: flex;
+}
+.CampoCards .card:hover .CardHover {
+    display: flex;
+    animation: HoverAnimat 0.3s ease-in-out;
+}
+@keyframes HoverAnimat {
+    0% {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.CardHover{
+    display: none;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 92px !important;
+    left: 0;
+    width: 100%;
+    padding: 10px 5px;
+    background-color: rgba(92, 30, 15, 0.811);
+    color: rgb(255, 255, 255);
+}
+.CardHoverlabel{
+    opacity: 30%;
+}
+.ButtonCart:focus {
+    outline: none;
+  }
+.ButtonCart img:hover{
+    transform: translateY(-1px);
+}
+.ButtonCart img:active{
+    transform: translateY(1px);
+}
+.CardHover input{
+    width: 40px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.491);
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+.CampoCards .card .card-body{
+   padding: 10px;
+}
+.CampoCards .card p,.CampoCards .card h5{
+    margin: 0;
+ }
+.CampoCards .card img{
+    border-radius: 0 25px;
+}
+section{
+    justify-content:space-between;
+    padding: 20px;
+}
+section .col{
+    margin-top: 20px;
+}
+.ButtonCart{
+    background-color: transparent;
+    border: none;
+}
+.ButtonCartStory{
+    background-color: transparent;
+    border: none;
+}
+.ButtonCartStory img{
+
+    width: 25px;
+}
+.ButtonCartStory label{
+    background-color:red;
+    border: none;
+    color: aliceblue;
+    border-radius: 30px;
+    padding: 1px 3px;
+    font-size:10px;
+    width: 18px;
+    position: relative;
+    top: -7px;
+    left: -8px;
+}
+.ButtonCartStory:focus {
+    outline: none;
+  }
+.ButtonCartStory:hover{
+    transform: translateY(-1px);
+}
+.ButtonCartStory:active{
+    transform: translateY(1px);
+}
+.CardCampOn{
+    display: flex !important;
+}
+.CartCamp{
+    display: none;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 500px;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(18, 77, 117, 0.9);
+    border-radius: 5px;
+    color: white;
+    z-index: 5;
+    padding: 30px;
+    width: 350px;
+    height: auto;
+}
+.ButtonCloseCart{
+    background-color:red;
+    border: none;
+    color: aliceblue;
+    border-radius: 30px;
+    padding: 1px 3px;
+    font-size:15px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+.ButtonCloseCart:hover{
+    transform: translateY(-1px);
+}
+.ButtonCloseCart:active{
+    transform: translateY(1px);
+}
+.ButtonCloseCart:focus {
+    outline: none;
+}
+.campEcomendas{
+    text-align: center;
+}
+.campEcomendas input{
+    background-color: transparent;
+    border: none;
+    color: white;
+    border-bottom: 1px solid white;
+}
+.campEcomendas input:focus {
+    outline: none;
+  }
+.campEcomendas button{
+    background-color: rgb(56, 73, 83);
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    margin-top: 10px;
+}
+.campEcomendas button:focus{
+    outline: none;
+  }
+.campEcomendas button:hover{
+    transform: translateY(-1px);
+}
+.campEcomendas button:active{
+    transform: translateY(1px);
+}
+.carousel-item{
+   max-height: 600px !important;
+}
+.carousel-item img{
+    height: 100%;
+}

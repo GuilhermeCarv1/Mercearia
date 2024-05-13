@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+body{
+    background-color: rgba(251, 251, 251, 0.814) !important;
+}
+.CampoTopLogin{
+    background-image: url('./Img/imgBackground.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px); 
+    height: 100%;
+    position: fixed;
+    border: none;
+}
+.CampoTopLoginInter{
+    background-color: rgba(0, 0, 0, 0.673);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    height: 400px;
+    padding: 40px;
+    width: 350px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
+}
+.CampoTopLoginInter button{
+    margin-top: 50px !important;
+}
+.CampoTopLoginInter h1{
+    font-weight: 100;
+}
+.CampoTopLoginInter h6{
+    font-weight: 100;
+}
+.CampoTopLoginInter div{
+    border-bottom: 1px solid white;
+    margin-top: 10px;
+}
+.CampoTopLoginInter div img{
+    width: 26px;
+}
+.CampoTopLoginInter div input{
+    background-color: transparent;
+    border: none;
+    color: rgb(255, 255, 255);
+    text-shadow: none;
+} 
+.CampoTopLoginInter input:focus {
+    outline: none !important;
+}
+
+header{
+    top: 40px;
+    position: relative;
+}
+aside{
+    background-color:rgb(255, 255, 255);
+}
+
+.NavBarTop{
+    background-color: rgba(0, 0, 0, 0.677);
+    display: flex;
+    position: fixed;
+    width: 100%;
+    top: 8px;
+    list-style: none;
+    text-decoration: none;
+    z-index: 50;
+    justify-content: center;
+}
+.NavBarTop li{
+    margin-left: 10px;
+    padding: 10px 15px;
+}
+.NavBarTop a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+.NavBarTop a:hover{
+    color: rgb(202, 21, 21);
+}
+.ButtonMaster{
+    padding: 5px 45px;
+    border: 0;
+    font-size: 14px;
+    outline: none;
+    background-color: rgb(130, 51, 51);
+    color: rgb(255, 255, 255);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.562);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.ButtonMaster:hover{
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.562);
+
+}
+.ButtonMaster:active{
+    transform: translateY(4px);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.562);
+}

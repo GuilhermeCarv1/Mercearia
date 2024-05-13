@@ -1,0 +1,97 @@
+-- --------------------------------------------------------
+-- Servidor:                     127.0.0.1
+-- Versão do servidor:           8.0.30 - MySQL Community Server - GPL
+-- OS do Servidor:               Win64
+-- HeidiSQL Versão:              12.1.0.6537
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+-- Copiando estrutura do banco de dados para mercearia
+CREATE DATABASE IF NOT EXISTS `mercearia` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `mercearia`;
+
+-- Copiando estrutura para tabela mercearia.encomendas
+CREATE TABLE IF NOT EXISTS `encomendas` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(45) COLLATE utf8mb4_general_ci NOT NULL,
+  `data_nascimento` date NOT NULL,
+  `morada` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `preco_total` float NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Copiando dados para a tabela mercearia.encomendas: ~2 rows (aproximadamente)
+INSERT INTO `encomendas` (`id`, `nome`, `data_nascimento`, `morada`, `preco_total`) VALUES
+	(6, 'João Almeida', '1998-09-19', 'R. Olinda, 98 4490-80 Lisboa', 24.9),
+	(7, 'Maria das Rosas', '1981-12-08', 'R. do Rosario, 88 3448-54 Penafiel', 0.8);
+
+-- Copiando estrutura para tabela mercearia.produto
+CREATE TABLE IF NOT EXISTS `produto` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `Nome` varchar(45) COLLATE utf8mb4_general_ci NOT NULL,
+  `Img` varchar(150) COLLATE utf8mb4_general_ci NOT NULL,
+  `Quantidade` int NOT NULL,
+  `Preco` float NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Copiando dados para a tabela mercearia.produto: ~8 rows (aproximadamente)
+INSERT INTO `produto` (`id`, `Nome`, `Img`, `Quantidade`, `Preco`) VALUES
+	(1, 'Abacate', 'https://static.todamateria.com.br/upload/ab/ac/abacate-cke.jpg', 2, 2.4),
+	(2, 'Abacaxi', 'https://static.todamateria.com.br/upload/ab/ac/abacaxi-0-cke.jpg?auto_optimize=low', 0, 2.5),
+	(3, 'Banana', 'https://static.todamateria.com.br/upload/ba/na/banana-0-cke.jpg?auto_optimize=low', 14, 1.75),
+	(4, 'Biribá', 'https://static.todamateria.com.br/upload/bi/ri/biriba-cke.jpg?auto_optimize=low', 0, 5.5),
+	(5, 'Cajá', 'https://static.todamateria.com.br/upload/fr/ut/fruta11-cke.jpg?auto_optimize=low', 5, 1),
+	(6, 'Caqui', 'https://static.todamateria.com.br/upload/ca/qu/caqui-cke.jpg?auto_optimize=low', 30, 2),
+	(7, 'Alface', 'https://cdn.awsli.com.br/600x1000/1982/1982052/produto/174027508/53c931b15d.jpg', 2, 1.9),
+	(8, 'Batata-Doce', 'https://www.baudefruta.pt/wp-content/uploads/2021/06/BD001-batata_doce.jpg', 30, 2.9),
+	(9, 'Cebola', 'https://conteudo.imguol.com.br/c/entretenimento/61/2017/10/25/cebola-1508951722238_v2_450x450.jpg', 47, 0.5),
+	(10, 'Feijão', 'https://casadasfrutas.pt/wp-content/uploads/2020/04/imagens-site-9.png', 15, 0.8);
+
+-- Copiando estrutura para tabela mercearia.produtos_encomendas
+CREATE TABLE IF NOT EXISTS `produtos_encomendas` (
+  `idprodutos_encomendas` int NOT NULL AUTO_INCREMENT,
+  `encomenda_id` int NOT NULL,
+  `produto_id` int NOT NULL,
+  `quantidade` int NOT NULL,
+  PRIMARY KEY (`idprodutos_encomendas`),
+  KEY `fk_produtos_encomendas_encomendas_idx` (`encomenda_id`),
+  KEY `fk_produtos_encomendas_produto1_idx` (`produto_id`),
+  CONSTRAINT `fk_produtos_encomendas_encomendas` FOREIGN KEY (`encomenda_id`) REFERENCES `encomendas` (`id`),
+  CONSTRAINT `fk_produtos_encomendas_produto1` FOREIGN KEY (`produto_id`) REFERENCES `produto` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Copiando dados para a tabela mercearia.produtos_encomendas: ~4 rows (aproximadamente)
+INSERT INTO `produtos_encomendas` (`idprodutos_encomendas`, `encomenda_id`, `produto_id`, `quantidade`) VALUES
+	(1, 6, 1, 3),
+	(2, 6, 3, 6),
+	(3, 6, 7, 3),
+	(4, 6, 9, 3),
+	(5, 7, 10, 1);
+
+-- Copiando estrutura para tabela mercearia.utilizadores
+CREATE TABLE IF NOT EXISTS `utilizadores` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `Name` varchar(45) COLLATE utf8mb4_general_ci NOT NULL,
+  `Password` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Copiando dados para a tabela mercearia.utilizadores: ~0 rows (aproximadamente)
+INSERT INTO `utilizadores` (`id`, `Name`, `Password`) VALUES
+	(1, 'Guilherme', 123);
+
+/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
